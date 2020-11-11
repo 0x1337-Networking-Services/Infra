@@ -1,0 +1,13 @@
+---
+- name: 0x1337 Networking Services Concourse/Ansible Pipeline
+  hosts: all
+  connection: local
+  gather_facts: False
+
+  tasks:
+  - name: Install sudo
+    become: yes
+    package:
+      name:
+        - sudo
+      state: present
