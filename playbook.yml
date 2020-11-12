@@ -5,7 +5,11 @@
 
   tasks:
   - name: "ping test"
-    ping: "192.168.80.5"
+    ping:
+      data: crash
+
+  - debug:
+      var: crash
 
   - name: Test ssh Connection
     shell: echo $HOSTNAME
