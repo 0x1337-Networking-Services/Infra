@@ -5,9 +5,9 @@
   gather_facts: False
 
   tasks:
-  - name: Install sudo
-    become: yes
-    package:
-      name:
-        - sudo
-      state: present
+  - name: Test ssh Connection
+    shell: echo $HOSTNAME
+    register: result
+
+  - debug:
+    var: result
