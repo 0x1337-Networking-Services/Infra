@@ -5,13 +5,13 @@
 
   tasks:
   - name: "test 250"
-    local_action: "ping 192.168.80.250"
+    local_action: command ping 192.168.80.250
 
   - name: "test 5"
-    local_action: "ping 192.168.80.5"
+    local_action: command ping 192.168.80.5
 
   - name: "test"
-    local_action: "ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null 192.168.80.5"
+    local_action: command ssh -o StrictHostKeyChecking=no -o UserKnownHostsFile=/dev/null 192.168.80.5
 
   - name: Test ssh Connection
     shell: echo $HOSTNAME
