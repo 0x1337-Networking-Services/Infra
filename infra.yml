@@ -4,6 +4,15 @@
   gather_facts: false
 
   tasks:
+  - name: test 250
+    local_action: ansible.builtin.command ping 192.168.80.250
+
+  - name: test 5
+    local_action: ansible.builtin.command ping 192.168.80.5
+
+  - name: test
+    local_action: ansible.builtin.command ssh -o UserKnownHostsFile=/dev/null  192.168.80.5
+
   - name: Test ssh Connection
     shell: echo $HOSTNAME
     register: result
