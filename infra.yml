@@ -1,8 +1,7 @@
 ---
 - name: 0x1337 Networking Services Concourse/Ansible Pipeline
   hosts: all
-  connection: local
-  gather_facts: False
+  gather_facts: false
 
   tasks:
   - name: Test ssh Connection
