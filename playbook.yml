@@ -25,7 +25,7 @@
 
   - ping:
       data: var_ping
-    ignore_errors: yes
+    ignore_errors: 'yes'
   
   - debug:
       var: var_ping
