@@ -15,6 +15,7 @@
       - name:
         action: ping
         register: var_ping
+        ignore_errors: yes
     rescue:
       - debug:
           msg: "No connection need to implement workaround {{ host }}"
