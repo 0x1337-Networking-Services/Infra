@@ -40,3 +40,4 @@
   - name: Display variable from encrypted vault
     debug:
       var: vault_ssh_key
+    delegate_to: 127.0.0.1
