@@ -21,11 +21,8 @@
 
   - name: Hostname
     raw: cat /etc/hostname
-    ignore_errors: 'yes'
-
-  - ping:
-      data: var_ping
+    register: raw_command
     ignore_errors: 'yes'
   
   - debug:
-      var: var_ping
+      var: raw_command
