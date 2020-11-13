@@ -21,20 +21,10 @@
 
   - block:
       - debug: msg="Hello"
-      - fail: msg="Initial failure"
+      - raw: cat /etc/hostname
+        register: raw_command
     rescue:
       - debug: msg="Rescued"
-    always:
-      - fail: msg="Failed"
 
-  - name: 
-    block:
-      - name: login and print hostname using raw command
-        raw: cat /etc/hostname
-        register: raw_command
-      - name:
-        ping:
-    ignore_errors: 'yes'
-  
   - debug:
       var: raw_command
