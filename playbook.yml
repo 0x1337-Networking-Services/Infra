@@ -16,7 +16,7 @@
       path: "~/.ssh/"
       state: directory
       mode: '0755'
-    run_once
+    run_once: true
     delegate_to: 127.0.0.1
 
   - name: Copy SSH private key
