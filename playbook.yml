@@ -6,17 +6,3 @@
   tasks:
   - debug:
       var: ansible_facts
-  
-  - name: "ping test"
-    ping:
-      data: crash
-
-  - debug:
-      var: crash
-
-  - name: Test ssh Connection
-    shell: echo $HOSTNAME
-    register: result
-
-  - debug:
-      var: result
