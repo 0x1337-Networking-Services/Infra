@@ -11,14 +11,9 @@
       extensions: ['yml']
 
   - name: ping
-    block:
-      - name:
-        action: ping
-        register: var_ping
-        ignore_errors: yes
-    rescue:
-      - debug:
-          msg: "No connection need to implement workaround {{ host }}"
+    action: ping
+    register: var_ping
+    ignore_errors: yes
   
   - debug:
       var: var_ping
