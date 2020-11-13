@@ -6,3 +6,10 @@
   tasks:
   - debug:
       var: ansible_facts
+
+  - name: ping
+      action: ping
+      register: debug
+  
+  - debug:
+      var: debug
