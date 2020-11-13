@@ -25,15 +25,13 @@
       - debug:
           msg: "This always executes"
 
-  - name: ping
-    action: ping
-    register: var_ping
-    ignore_errors: True
-  
-  - debug:
-      var: var_ping
-
   - name: Display variable from encrypted vault
     debug:
       var: vault_ssh_key
-    delegate_to: 127.0.0.1
+
+  - ping:
+      data: var_ping
+    ignore_errors: yes
+  
+  - debug:
+      var: var_ping
