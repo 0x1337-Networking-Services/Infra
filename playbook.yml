@@ -10,21 +10,6 @@
       ignore_unknown_extensions: True
       extensions: ['yml']
 
-  - name: Attempt and graceful roll back demo
-    block:
-      - debug:
-          msg: 'I execute normally'
-      - name: i force a failure
-        command: /bin/false
-      - debug:
-          msg: 'I never execute, due to the above task failing, :-('
-    rescue:
-      - debug:
-          msg: 'I caught an error'
-    always:
-      - debug:
-          msg: "This always executes"
-
   - name: Display variable from encrypted vault
     debug:
       var: vault_ssh_key
