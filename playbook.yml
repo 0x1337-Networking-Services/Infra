@@ -1,15 +1,15 @@
 ---
 - name: 0x1337 Networking Services Concourse/Ansible Pipeline
-  hosts: localhost
-  gather_facts: true
+  hosts: all
+  gather_facts: false
 
   tasks:
-  - debug:
-      var: ansible_facts
-
   - name: ping
     action: ping
     register: debug
   
   - debug:
       var: debug
+
+  - debug:
+      var: ansible_facts
