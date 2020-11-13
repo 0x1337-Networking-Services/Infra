@@ -4,7 +4,7 @@ all:
       hosts:
         app01:
           ansible_host: 192.168.80.5
-          ansible_ssh_private_key_file: "~/.ssh/id_rsa"
+          ansible_ssh_private_key_file: "./id_rsa"
         app02:
           ansible_host: 192.168.80.20
-          ansible_ssh_private_key_file: "~/.ssh/id_rsa"
+          ansible_ssh_private_key_file: "./id_rsa"
