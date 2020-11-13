@@ -4,4 +4,5 @@ all:
       hosts:
         app01:
           ansible_host: 192.168.80.5
-          ansible_user: agent47
+        app02:
+          ansible_host: 192.168.80.20
