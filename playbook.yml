@@ -5,7 +5,7 @@
 
   tasks:
   - debug:
-      var: "{{ ansible_facts['env'] }}"
+      var: ansible_facts
   
   - name: "ping test"
     ping:
