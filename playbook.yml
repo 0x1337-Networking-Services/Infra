@@ -17,7 +17,7 @@
         register: var_ping
     rescue:
       - debug:
-        msg: "Can\'t connect need to implement workaround {{ host }}"
+        msg: "No connection need to implement workaround {{ host }}"
   
   - debug:
       var: var_ping
