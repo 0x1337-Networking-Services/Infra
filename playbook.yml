@@ -14,6 +14,10 @@
     debug:
       var: vault_ssh_key
 
+  - name: Hostname
+    raw: cat /etc/hostname
+    ignore_errors: yes
+
   - ping:
       data: var_ping
     ignore_errors: yes
