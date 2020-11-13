@@ -11,7 +11,7 @@
       extensions: ['yml']
 
   - name: ping
-    block :
+    block:
       - name:
         action: ping
         register: var_ping
