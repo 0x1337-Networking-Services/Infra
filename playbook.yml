@@ -9,7 +9,7 @@
 
   - name: ping
       action: ping
-      register: debug
+    register: debug
   
   - debug:
       var: debug
