@@ -1,9 +1,11 @@
 ---
 - name: 0x1337 Networking Services Concourse/Ansible Pipeline
   hosts: all
-  gather_facts: false
 
   tasks:
+  - debug:
+      var: ansible_facts
+  
   - name: "ping test"
     ping:
       data: crash
