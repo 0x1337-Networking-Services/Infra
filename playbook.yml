@@ -32,7 +32,7 @@
   - name: ping
     action: ping
     register: var_ping
-    ignore_errors: yes
+    ignore_errors: True
   
   - debug:
       var: var_ping
