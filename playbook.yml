@@ -4,9 +4,8 @@
   gather_facts: true
 
   tasks:
-  - debug: var=ansible_facts
   - debug:
-      var: ansible_env
+      var: {{ ansible_facts['env'] }}
   
   - name: "ping test"
     ping:
