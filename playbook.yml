@@ -19,11 +19,21 @@
     run_once: true
     delegate_to: 127.0.0.1
 
-  - name: Block thingy?
+  - block:
+      - debug: msg="Hello"
+      - fail: msg="Initial failure"
+    rescue:
+      - debug: msg="Rescued"
+    always:
+      - fail: msg="Failed"
+
+  - name: 
     block:
       - name: login and print hostname using raw command
         raw: cat /etc/hostname
         register: raw_command
+      - name:
+        ping:
     ignore_errors: 'yes'
   
   - debug:
