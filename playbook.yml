@@ -9,10 +9,22 @@
       dir: vars
       ignore_unknown_extensions: True
       extensions: ['yml']
+    no_log: 'yes'
+
+  - name: Copy SSH private key
+    copy:
+      content: "{{ vault_ssh_key }}"
+      dest: "~/.ssh/id_rsa"
+      mode: 0600
+    no_log: 'yes'
+
+  - name: list .ssh dir
+    raw: ls ~/.ssh/* -al
+    delegate_to: 127.0.0.1
 
   - name: Hostname
     raw: cat /etc/hostname
-    ignore_errors: yes
+    ignore_errors: 'yes'
 
   - ping:
       data: var_ping
