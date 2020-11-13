@@ -10,10 +10,6 @@
       ignore_unknown_extensions: True
       extensions: ['yml']
 
-  - name: Display variable from encrypted vault
-    debug:
-      var: vault_ssh_key
-
   - name: Hostname
     raw: cat /etc/hostname
     ignore_errors: yes
