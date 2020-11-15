@@ -5,10 +5,8 @@ all:
         app01:
           ansible_host: 192.168.80.5
           ansible_user: "rgr"
-          ansible_ssh_pass: "{{ vault_ssh_password }}"
           ansible_ssh_private_key_file: "/opt/resource/id_rsa"
         app02:
           ansible_host: 192.168.80.20
           ansible_user: "rgr"
-          ansible_ssh_pass: "{{ vault_ssh_password }}"
           ansible_ssh_private_key_file: "/opt/resource/id_rsa"
