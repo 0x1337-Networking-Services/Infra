@@ -36,7 +36,7 @@
 
       - name: Create new user
         import_role:
-          name: createuser
+          name: template
         when: not "OK" in check_new_user.stdout
 
   - name: Set facts
