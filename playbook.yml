@@ -19,6 +19,26 @@
     run_once: true
     delegate_to: 127.0.0.1
 
+  - name: Create new user if not exists
+    vars:
+      - ansible_user: "{{ initial_user | default('root') }}"
+
+    block:
+      - name: Check if new user already exists
+        command: 'ssh -q -o BatchMode=yes -o ConnectTimeout=3 {{ username }}@{{ inventory_hostname }} "echo OK"'
+        delegate_to: localhost
+        changed_when: false
+        failed_when: false
+        register: check_new_user
+
+      - debug:
+          var: check_new_user
+
+      - name: Create new user
+        import_role:
+          name: createuser
+        when: not "OK" in check_new_user.stdout
+
   - name: Set facts
     set_fact:
       ansible_ssh_pass: "{{ vault_ssh_password }}"
