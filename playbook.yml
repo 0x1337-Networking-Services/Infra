@@ -22,7 +22,7 @@
   - name: Create new user if not exists
     vars:
       - ansible_user: "{{ initial_user | default('root') }}"
-      - username: "{{ initial_user | default('root') }}"
+      - username: "{{ initial_user | default('rgr') }}"
 
     block:
       - name: Check if new user already exists
