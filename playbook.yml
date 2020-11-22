@@ -40,16 +40,16 @@
           name: template
         when: not "OK" in check_new_user.stdout
 
-  - name: Set facts
-    set_fact:
-      ansible_ssh_pass: "{{ vault_ssh_password }}"
+  # - name: Set facts
+  #   set_fact:
+  #     ansible_ssh_pass: "{{ vault_ssh_password }}"
   
-  - block:
-      - debug: msg="Hello"
-      - raw: cat /etc/hostname
-        register: raw_command
-    rescue:
-      - debug: msg="Rescued"
+  # - block:
+  #     - debug: msg="Hello"
+  #     - raw: cat /etc/hostname
+  #       register: raw_command
+  #   rescue:
+  #     - debug: msg="Rescued"
 
-  - debug:
-      var: raw_command
+  # - debug:
+  #     var: raw_command
