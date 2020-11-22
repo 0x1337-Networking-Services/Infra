@@ -1,6 +1,12 @@
 ---
 # ./roles/template/tasks/main.yml
 
+- raw: apt-get install python
+  register: raw_command
+
+- debug:
+    var: raw_command
+
 - name: install dependencies
   apt:
     name: "{{ item }}"
@@ -9,9 +15,3 @@
   loop:
     - python
     - sudo
-
-- raw: apt-get install python
-  register: raw_command
-
-- debug:
-    var: raw_command
