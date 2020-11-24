@@ -16,6 +16,7 @@
       content: "{{ vault_ssh_key }}"
       dest: "/opt/resource/id_rsa"
       mode: 0600
+    changed_when: false
     run_once: true
     delegate_to: 127.0.0.1
 
