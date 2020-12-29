@@ -15,7 +15,7 @@
   loop:
     - sudo
 
-- name: Copy a new "sudoers" file into place, after passing validation with visudo
+- name: Copy a new "sudoers" file into place
   copy:
     src: ./sudoers
     dest: /etc/sudoers
