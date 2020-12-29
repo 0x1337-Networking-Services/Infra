@@ -33,6 +33,11 @@
         failed_when: false
         register: check_new_user
 
+      - name: Set facts
+        set_fact:
+          ansible_ssh_pass: "{{ vault_ssh_password }}"
+
+
       - name: Create new user
         import_role:
           name: template
